@@ -1,0 +1,98 @@
+{
+  "research_themes": [
+    "longevity_genetics",
+    "aging_interventions",
+    "life_extension_drugs",
+    "cellular_senescence",
+    "telomeres_aging",
+    "caloric_restriction",
+    "anti_aging_compounds",
+    "regenerative_medicine",
+    "biomarkers_aging",
+    "aging_mechanisms"
+  ],
+  "query_templates": {
+    "longevity_genetics": [
+      "longevity genes human",
+      "genetic factors life extension",
+      "FOXO3 longevity genetics",
+      "APOE longevity variants",
+      "centenarian genetics study"
+    ],
+    "aging_interventions": [
+      "life extension interventions",
+      "anti-aging therapies clinical",
+      "longevity interventions human",
+      "aging reversal therapies",
+      "lifespan extension methods"
+    ],
+    "life_extension_drugs": [
+      "metformin anti-aging effects",
+      "rapamycin longevity studies",
+      "resveratrol life extension",
+      "NAD+ precursors aging",
+      "senolytics aging drugs"
+    ],
+    "cellular_senescence": [
+      "cellular senescence aging",
+      "senescent cells clearing",
+      "p16 senescence biomarker",
+      "SASP aging inflammation",
+      "senolytic drugs research"
+    ],
+    "telomeres_aging": [
+      "telomeres aging longevity",
+      "telomerase activation therapy",
+      "telomere length aging",
+      "TA-65 telomerase activator",
+      "telomere shortening interventions"
+    ],
+    "caloric_restriction": [
+      "caloric restriction longevity",
+      "intermittent fasting aging",
+      "CR mimetics anti-aging",
+      "dietary restriction lifespan",
+      "fasting longevity effects"
+    ],
+    "anti_aging_compounds": [
+      "spermidine anti-aging effects",
+      "quercetin aging intervention",
+      "curcumin longevity studies",
+      "NMN aging supplement",
+      "astragalus anti-aging"
+    ],
+    "regenerative_medicine": [
+      "stem cells aging therapy",
+      "tissue regeneration aging",
+      "pluripotent stem cells longevity",
+      "regenerative medicine aging",
+      "cell therapy anti-aging"
+    ],
+    "biomarkers_aging": [
+      "biological age biomarkers",
+      "aging clock epigenetic",
+      "inflammaging biomarkers",
+      "longevity biomarkers human",
+      "aging assessment tests"
+    ],
+    "aging_mechanisms": [
+      "hallmarks of aging",
+      "mitochondrial aging theory",
+      "oxidative stress aging",
+      "protein aggregation aging",
+      "DNA damage aging mechanisms"
+    ]
+  },
+  "search_settings": {
+    "max_results_per_query": 50,
+    "date_range_years": 5,
+    "min_articles_per_theme": 20,
+    "max_queries_per_session": 100
+  },
+  "priorities": {
+    "recent_research": 0.4,
+    "clinical_trials": 0.3,
+    "review_articles": 0.2,
+    "basic_research": 0.1
+  }
+}
