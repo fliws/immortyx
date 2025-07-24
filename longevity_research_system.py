@@ -360,12 +360,14 @@ class LongevityResearchSystem:
             
             if format_choice in ['json', 'both']:
                 json_file = f"{filename_base}_{timestamp}.json"
+                json_file = f"output/{json_file}"  # Ensure JSON files are saved in the 'output' directory
                 with open(json_file, 'w', encoding='utf-8') as f:
                     json.dump(articles_data, f, ensure_ascii=False, indent=2)
                 print(f"✅ JSON экспорт сохранен: {json_file}")
             
             if format_choice in ['csv', 'both']:
                 csv_file = f"{filename_base}_{timestamp}.csv"
+                csv_file = f"output/{csv_file}"  # Ensure CSV files are saved in the 'output' directory
                 import csv
                 
                 if articles_data:
@@ -476,4 +478,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()

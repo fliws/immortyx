@@ -6,6 +6,7 @@
 
 from pubmed_parser import PubMedParser
 import time
+import os
 
 
 def example_basic_search():
@@ -87,13 +88,24 @@ def example_save_results():
     articles = parser.search_and_fetch(query, max_results=5)
     
     if articles:
+        # Создаем директорию output, если ее нет
+        os.makedirs("output", exist_ok=True)
+        
         # Сохраняем в JSON
-        parser.save_to_json(articles, "ml_medical_imaging.json")
+        filename = "ml_medical_imaging.json"
+        parser.save_to_json(articles, filename)
+        print(f"Сохранено {len(articles)} статей в JSON формате: {filename}")
         
         # Сохраняем в CSV
-        parser.save_to_csv(articles, "ml_medical_imaging.csv")
+        filename = "ml_medical_imaging.csv"
+        parser.save_to_csv(articles, filename)
+        print(f"Сохранено {len(articles)} статей в CSV формате: {filename}")
         
-        print(f"Сохранено {len(articles)} статей в JSON и CSV форматах")
+        # Перемещаем файлы в директорию output
+        for fmt in ["json", "csv"]:
+            os.rename(f"ml_medical_imaging.{fmt}", f"output/ml_medical_imaging.{fmt}")
+        
+        print(f"Файлы перемещены в директорию 'output'")
     
     return articles
 
@@ -217,4 +229,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()

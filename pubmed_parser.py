@@ -5,6 +5,7 @@ import csv
 import time
 from typing import List, Dict, Optional, Union
 from urllib.parse import quote
+import os
 
 
 class PubMedParser:
@@ -22,7 +23,10 @@ class PubMedParser:
         self.email = email
         self.api_key = api_key
         self.last_request_time = 0
-        self.request_delay = 0.34  # Задержка между запросами (рекомендуется NCBI)
+        self.request_delay = 0.34  # Задержка между запросами (рекомендуется)
+        
+        # Создаем директорию для сохранения результатов, если она не существует
+        os.makedirs('output', exist_ok=True)
         
     def _wait_between_requests(self):
         """Добавляет задержку между запросами для соблюдения лимитов API"""
@@ -256,6 +260,7 @@ class PubMedParser:
     
     def save_to_json(self, articles: List[Dict], filename: str = "pubmed_results.json"):
         """Сохранение результатов в JSON файл"""
+        filename = f"output/{filename}"  # Ensure files are saved in the 'output' directory
         try:
             with open(filename, 'w', encoding='utf-8') as f:
                 json.dump(articles, f, ensure_ascii=False, indent=2)
@@ -265,6 +270,7 @@ class PubMedParser:
     
     def save_to_csv(self, articles: List[Dict], filename: str = "pubmed_results.csv"):
         """Сохранение результатов в CSV файл"""
+        filename = f"output/{filename}"  # Ensure files are saved in the 'output' directory
         if not articles:
             print("Нет данных для сохранения")
             return
@@ -326,4 +332,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
+    main()
